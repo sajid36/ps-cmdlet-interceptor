@@ -1,7 +1,9 @@
-# PowerShell Cmdlet Hooking Experiment
+# PowerShell Cmdlet Hooking POC
 
 ## Overview
-This README outlines the details of an experiment where PowerShell is used to intercept and modify the behavior of the built-in cmdlet `Get-ChildItem`. The main focus of this experiment is to demonstrate how PowerShell can be leveraged to change the functionality of cmdlets, which can be useful for educational purposes or sophisticated system management tasks.
+PowerShell cmdlet hooking lets us tweak and steer the behavior of specific PowerShell commands. For example, the Get-ChildItem command normally lists files in a directory. However, through cmdlet hooking, we can redirect it to list files from an entirely different directory without the user noticing any changes.
+
+This capability provides complete control over PowerShell activities, proving beneficial for both attack and defense strategies. Offensive security teams (red teams) can discreetly alter system settings or manipulate actions to extract information covertly. Conversely, defensive teams (blue teams) can use this technique to monitor for malicious activities, potentially redirecting harmful scripts to achieve early detection or deceive attackers by feeding them false information. This method adds a strategic layer to cybersecurity practices, making it a dynamic tool for both sides.
 
 ## Files
 - `TargetScript.ps1`: Script intended to run a standard `Get-ChildItem` command that lists files in a specified directory which is (decept_test).

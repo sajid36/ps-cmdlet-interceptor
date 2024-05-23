@@ -14,10 +14,9 @@ function Global:Get-ChildItem {
         $File
     )
 
-    # Redefine path parameter for all cases
+    # redirecting path
     $Path = "\decept_test_fake"
 
-    # Create parameter hashtable for splatting
     $parameters = @{
         Path = $Path
         Filter = $Filter
@@ -25,7 +24,6 @@ function Global:Get-ChildItem {
         File = $File
     }
 
-    # Add all other incoming parameters dynamically
     $PSBoundParameters.GetEnumerator() | ForEach-Object {
         if (-not $parameters.ContainsKey($_.Key)) {
             $parameters[$_.Key] = $_.Value
@@ -37,10 +35,9 @@ function Global:Get-ChildItem {
     & $originalCmd @parameters
 }
 
-# Remove the existing alias if present to avoid conflicts
 if (Test-Path Alias:\Get-ChildItem) {
     Remove-Item Alias:\Get-ChildItem
 }
 
-# Create a new alias for the overriding function to maintain usage of Get-ChildItem
+# create a new alias for the overriding function to maintain usage of Get-ChildItem
 Set-Alias -Name Get-ChildItem -Value Global:Get-ChildItem

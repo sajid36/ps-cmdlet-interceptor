@@ -34,3 +34,7 @@ run: .\TargetScript.ps1 on the same terminal
 ## Expected Outcomes
 
 When TargetScript.ps1 is executed, rather than showing results from its originally specified directory, it will list files from the directory specified in HookScript.ps1. This change confirms the successful redirection of the Get-ChildItem cmdlet.
+
+![tempsnip](https://github.com/sajid36/ps-cmdlet-interceptor/assets/30213560/9965604a-2328-4a48-8514-28b8293dcd74)
+
+

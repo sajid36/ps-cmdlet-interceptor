@@ -25,12 +25,12 @@ Open a PowerShell terminal. Navigate to the directory containing the scripts and
 
 run: .\HookScript.ps1
 
-###Step 3: Run the Target Script
+### Step 3: Run the Target Script
 
 With the hook in place, execute the TargetScript to observe the cmdlet behavior change:
 
 run: .\TargetScript.ps1 on the same terminal 
 
-Expected Outcomes
+## Expected Outcomes
 
 When TargetScript.ps1 is executed, rather than showing results from its originally specified directory, it will list files from the directory specified in HookScript.ps1. This change confirms the successful redirection of the Get-ChildItem cmdlet.
